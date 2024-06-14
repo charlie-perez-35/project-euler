@@ -38,3 +38,22 @@ import matplotlib.pyplot as plt
 
 
 # %%
+
+data=cleaned_2024["CPU Cycle Rate (in GHz)"]
+print(data.unique())
+
+#%%
+
+cleaned_2024 = cleaned_2024[cleaned_2024["CPU Cycle Rate (in GHz)"] <= 5]
+data=cleaned_2024["CPU Cycle Rate (in GHz)"]
+print(data.unique())
+
+#%%
+
+sns.histplot(data=data, bins=5, kde=False, color='skyblue')
+
+plt.xlabel('Cycle Rate')
+plt.ylabel('Frequency')
+plt.title('Histogram of CPU Cycle Rate (in GHz), MSDS class of 2025')
+
+plt.show()

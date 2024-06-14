@@ -42,7 +42,7 @@ print("Euler 2 answer: Sum = " + str(e) + "\n")
 
 import numpy as np
 target = 600851475143
-target_sqrt = int(np.round(np.sqrt(600851475143)))
+target_sqrt = int(np.round(np.sqrt(target)))
 print(target_sqrt)
 # %%
 # given: every prime number above 2 is odd
@@ -85,17 +85,18 @@ print(primes)
 # %%
 
 prime_factors = []
+target_local = 600851475143
 for each in primes:
-    if target % each == 0:
-        target = target//each
+    if target_local % each == 0:
+        target_local = target_local//each
         prime_factors.append(each)
-    if target == 1:
+    if target_local == 1:
         break
-
+print(target_local)
 print(prime_factors)
 # %%
 # largest prime factor = 6857
 # Note: the above method is implicitly robust but not explicitly robust:
-# if the "for" loop loops through all of the potential smallest prime factors 
+# if the cell loops through all of the potential smallest prime factors 
 # without reducing the target to zero, the remaining "target" value 
 # will equal the largest prime factor
